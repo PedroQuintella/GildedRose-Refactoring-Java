@@ -21,7 +21,7 @@ class GildedRose {
         if (!item.name.equals(AGED_BRIE_CHEESE) && !item.name.equals(BACKSTAGE_PASSES)) {
             if (item.quality > 0) {
                 if (!item.name.equals(SULFURAS_ITEM)) {
-                    item.quality = item.quality - 1;
+                    decreaseQuality(item);
                 }
             }
         } else {
@@ -50,7 +50,7 @@ class GildedRose {
                 if (!item.name.equals(BACKSTAGE_PASSES)) {
                     if (item.quality > 0) {
                         if (!item.name.equals(SULFURAS_ITEM)) {
-                            item.quality = item.quality - 1;
+                            decreaseQuality(item);
                         }
                     }
                 } else {
@@ -62,5 +62,9 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    public void decreaseQuality(Item item) {
+        item.quality = item.quality - 1;
     }
 }

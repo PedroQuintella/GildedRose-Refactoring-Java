@@ -56,7 +56,7 @@ class GildedRose {
                         }
                     }
                 } else {
-                    item.quality = item.quality - item.quality;
+                    resetQuality(item);
                 }
             } else {
                 if (item.quality < MAX_QUALITY) {
@@ -64,6 +64,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    public void resetQuality(Item item) {
+        item.quality = item.quality - item.quality;
     }
 
     public void increaseQuality(Item item) {
